@@ -1,0 +1,10 @@
+{
+    "Solver controls": "v01",
+    "u_init":      1.0,
+    "phi_init":    0.0,
+    "phi_left":    0.0,
+    "phi_right":   1.0,
+    "rho":         1.0,
+    "gamma":       0.02,
+    "scheme":      "CDS"
+}

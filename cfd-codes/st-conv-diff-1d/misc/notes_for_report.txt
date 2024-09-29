@@ -1,0 +1,34 @@
+Notes:
+
+- verified the TDMA algorithm against examples in Malalasekera et.al. and https://www.youtube.com/watch?v=gPhE4KF0R
+
+- the algorithm assumes middle placement of nodes inside their respective cells;
+
+- 
+
+
+Parts of the project that I think were done well:
+
+- it works, I guess
+
+- the mesher allows for directional refinement with a refinement coefficient;
+
+- 
+
+
+Here's a brief list of things that I think were done not so well and can be improved:
+
+- better functions for reading settings. Right now, the input files are required to have a rigid structure (certain order and names for entries). In the code, every required entry has its own fgets and/or sscanf/fscanf statement. It would be more convenient and scalable to have some sort of a loop that goes through an entire file, records the key-value pairs, and then compares it against a dictionary with all required fields to check if everything is supplied.
+
+- better organisation of files (make all utilities callable from the case root folder);
+
+- checking for the scheme name happens for every coefficient. It would be a better design if that happened only once (or a set number times instead of O(n) times);
+* Revised this part by adding a conversion of scheme_name to scheme_int during the reading of the settings file. Subsequently, the switch operator is used to pick required coefficients.
+
+- MOST IMPORTANT storage and access of the A-matrix values. I stored them in a full n*n matrix, which is wasteful because the matrix is sparse and has values on the three central diagonals only. Furthermore, in the construct_matrices() function, I had to convert a "1d" index (from 0 to n_pts) to an equivalent "2d" index because the matrix A, while being a 2d matrix, is stored as a 1d array of length n_pts**2. It was a stupid idea to do it like that, and I honestly don't even know what I was thinking when I was implementing it.
+
+- there were some questionable, to put it mildly, choices for the indexing in loops. The problem is that not all matrices have the same (or proportional) dimensions. As a results, whithin a loop it was necessary to track positions in structurally different matrices, hence the need for two indexes, i and i_mtrx.
+
+- it might be prudent to store the length of arrays and matrices together with the actual values. Maybe a struct can do that.
+
+- I should look into the JSON file format;

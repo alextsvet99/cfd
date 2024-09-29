@@ -1,0 +1,4 @@
+left    0.0
+right   1.0
+n_points 11
+ref_fac 0.7

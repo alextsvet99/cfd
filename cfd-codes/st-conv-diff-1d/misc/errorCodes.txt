@@ -1,0 +1,8 @@
+Return values
+0   program exitted normally;
+1   wrong usage;
+2   could not read file;
+3   missing an entry in a file;
+4   could not write file;
+5   error allocating memory;
+6   error in setup;
