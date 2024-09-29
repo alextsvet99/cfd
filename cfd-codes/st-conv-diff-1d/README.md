@@ -7,6 +7,7 @@ A bullet-point description of the project:
 - uses the finite-difference approach;
 - both upwind difference and central difference schemes were used;
 - both uniform and non-uniform meshes were used;
-- the program was fully implemented in C.
+- the program was fully implemented in C;
+- results were analysed with a script written in Python.
 
 For more details, see the report report_st_conv_diff_1d.pdf.
