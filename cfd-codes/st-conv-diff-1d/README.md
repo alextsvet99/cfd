@@ -1,6 +1,6 @@
 # CFD Project n+01: Solution of stationary convection-diffusion equation
 
-In this project, a solution of a one-dimensional stationary convection-diffusion equation was developed and programmed using the C programming languge.
+In this project, the solution of a one-dimensional stationary convection-diffusion equation was developed and programmed using the C programming languge.
 
 A bullet-point description of the project:
 - solves the 1D stationary convection-diffusion problem;
